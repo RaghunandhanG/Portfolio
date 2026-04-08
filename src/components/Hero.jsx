@@ -73,89 +73,120 @@ export default function Hero() {
       <div className="absolute bottom-1/4 -right-20 w-[600px] h-[600px] bg-accent/10 rounded-full blur-[120px] animate-blob delay-300" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-accent-pink/5 rounded-full blur-[100px] animate-blob delay-600" />
 
-      {/* Decorative ring */}
+      {/* Decorative rings */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-primary/5 rounded-full animate-spin-slow" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-accent/5 rounded-full animate-spin-slow" style={{ animationDirection: 'reverse', animationDuration: '30s' }} />
 
-      <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
-        {/* Badge */}
-        <div className="animate-fade-in-up opacity-0" style={{ animationFillMode: 'forwards' }}>
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/20 bg-primary/5 text-primary-light text-sm mb-8 hover:bg-primary/10 transition-colors cursor-default">
-            <Sparkles size={14} className="animate-pulse" />
-            <span>Available for opportunities</span>
-            <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+      <div className="relative z-10 w-full max-w-6xl mx-auto px-6">
+        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+
+          {/* Left: Text Content */}
+          <div className="flex-1 text-center lg:text-left">
+            {/* Badge */}
+            <div className="animate-fade-in-up opacity-0" style={{ animationFillMode: 'forwards' }}>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/20 bg-primary/5 text-primary-light text-sm mb-8 hover:bg-primary/10 transition-colors cursor-default">
+                <Sparkles size={14} className="animate-pulse" />
+                <span>Available for opportunities</span>
+                <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+              </div>
+            </div>
+
+            {/* Name */}
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-5 animate-fade-in-up opacity-0 delay-100 text-glow" style={{ animationFillMode: 'forwards' }}>
+              Raghunandhan
+              <span className="gradient-text block"> G</span>
+            </h1>
+
+            {/* Typing effect */}
+            <div className="text-xl md:text-2xl text-muted mb-6 animate-fade-in-up opacity-0 delay-200 h-9" style={{ animationFillMode: 'forwards' }}>
+              <span className="text-white font-mono">{typedText}</span>
+              <span className="inline-block w-0.5 h-6 bg-primary ml-1 align-middle" style={{ animation: 'typing-cursor 0.8s step-end infinite' }} />
+            </div>
+
+            {/* Description */}
+            <p className="text-base md:text-lg text-muted/80 max-w-xl mx-auto lg:mx-0 mb-8 animate-fade-in-up opacity-0 delay-300 leading-relaxed" style={{ animationFillMode: 'forwards' }}>
+              Building intelligent systems with real-world impact. Specializing in
+              <span className="text-primary-light font-medium"> Machine Learning</span>,
+              <span className="text-accent font-medium"> Computer Vision</span>, and
+              <span className="text-accent-pink font-medium"> Generative AI</span>.
+            </p>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 mb-8 animate-fade-in-up opacity-0 delay-400" style={{ animationFillMode: 'forwards' }}>
+              <a
+                href="#contact"
+                className="group px-7 py-3.5 rounded-xl bg-gradient-to-r from-primary via-accent to-accent-pink text-white font-medium transition-all duration-300 hover:shadow-xl hover:shadow-primary/25 hover:-translate-y-1 animate-gradient"
+              >
+                <span className="flex items-center gap-2">
+                  Let's Connect
+                  <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
+                </span>
+              </a>
+              <a
+                href="#projects"
+                className="px-7 py-3.5 rounded-xl border border-primary/30 text-white hover:bg-primary/10 hover:border-primary/50 transition-all duration-300 hover:-translate-y-1"
+              >
+                View Projects
+              </a>
+            </div>
+
+            {/* Social links */}
+            <div className="flex items-center justify-center lg:justify-start gap-5 animate-fade-in-up opacity-0 delay-500" style={{ animationFillMode: 'forwards' }}>
+              {[
+                { icon: GithubIcon, href: 'https://github.com/RaghunandhanG', label: 'GitHub' },
+                { icon: LinkedinIcon, href: 'https://linkedin.com/in/raghunandhan-g', label: 'LinkedIn' },
+                { icon: Mail, href: 'mailto:raghugopalan3105@gmail.com', label: 'Email' },
+              ].map(({ icon: Icon, href, label }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target={label !== 'Email' ? '_blank' : undefined}
+                  rel="noopener noreferrer"
+                  className="group relative p-3 rounded-xl border border-white/10 text-muted hover:text-white hover:border-primary/40 hover:bg-primary/5 transition-all duration-300 hover:-translate-y-1"
+                >
+                  <Icon size={20} />
+                  <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 text-xs text-muted opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                    {label}
+                  </span>
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Right: Profile Photo */}
+          <div className="animate-fade-in-up opacity-0 delay-300 shrink-0" style={{ animationFillMode: 'forwards' }}>
+            <div className="relative group">
+              {/* Outer glow ring */}
+              <div className="absolute -inset-4 rounded-full bg-gradient-to-r from-primary via-accent to-accent-pink opacity-20 blur-xl group-hover:opacity-40 transition-opacity duration-500 animate-gradient" />
+
+              {/* Spinning border */}
+              <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-primary via-accent to-accent-pink animate-spin-slow opacity-60" style={{ animationDuration: '8s' }} />
+
+              {/* Photo container */}
+              <div className="relative w-64 h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-darker">
+                <img
+                  src="/profile.png"
+                  alt="Raghunandhan G"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+              </div>
+
+              {/* Floating decorative dots */}
+              <div className="absolute -top-2 -right-2 w-4 h-4 rounded-full bg-primary animate-float" />
+              <div className="absolute -bottom-1 -left-3 w-3 h-3 rounded-full bg-accent animate-float delay-200" />
+              <div className="absolute top-1/2 -right-5 w-2.5 h-2.5 rounded-full bg-accent-pink animate-float delay-400" />
+            </div>
           </div>
         </div>
 
-        {/* Name */}
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 animate-fade-in-up opacity-0 delay-100 text-glow" style={{ animationFillMode: 'forwards' }}>
-          Raghunandhan
-          <span className="gradient-text block md:inline"> G</span>
-        </h1>
-
-        {/* Typing effect */}
-        <div className="text-xl md:text-2xl text-muted mb-8 animate-fade-in-up opacity-0 delay-200 h-9" style={{ animationFillMode: 'forwards' }}>
-          <span className="text-white font-mono">{typedText}</span>
-          <span className="inline-block w-0.5 h-6 bg-primary ml-1 align-middle" style={{ animation: 'typing-cursor 0.8s step-end infinite' }} />
-        </div>
-
-        {/* Description */}
-        <p className="text-base md:text-lg text-muted/80 max-w-2xl mx-auto mb-10 animate-fade-in-up opacity-0 delay-300 leading-relaxed" style={{ animationFillMode: 'forwards' }}>
-          Building intelligent systems with real-world impact. Specializing in
-          <span className="text-primary-light font-medium"> Machine Learning</span>,
-          <span className="text-accent font-medium"> Computer Vision</span>, and
-          <span className="text-accent-pink font-medium"> Generative AI</span>.
-        </p>
-
-        {/* CTA Buttons */}
-        <div className="flex flex-wrap items-center justify-center gap-4 mb-12 animate-fade-in-up opacity-0 delay-400" style={{ animationFillMode: 'forwards' }}>
-          <a
-            href="#contact"
-            className="group px-7 py-3.5 rounded-xl bg-gradient-to-r from-primary via-accent to-accent-pink text-white font-medium transition-all duration-300 hover:shadow-xl hover:shadow-primary/25 hover:-translate-y-1 animate-gradient"
-          >
-            <span className="flex items-center gap-2">
-              Let's Connect
-              <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
-            </span>
-          </a>
-          <a
-            href="#projects"
-            className="px-7 py-3.5 rounded-xl border border-primary/30 text-white hover:bg-primary/10 hover:border-primary/50 transition-all duration-300 hover:-translate-y-1"
-          >
-            View Projects
-          </a>
-        </div>
-
-        {/* Social links */}
-        <div className="flex items-center justify-center gap-5 mb-16 animate-fade-in-up opacity-0 delay-500" style={{ animationFillMode: 'forwards' }}>
-          {[
-            { icon: GithubIcon, href: 'https://github.com/RaghunandhanG', label: 'GitHub' },
-            { icon: LinkedinIcon, href: 'https://linkedin.com/in/raghunandhan-g', label: 'LinkedIn' },
-            { icon: Mail, href: 'mailto:raghugopalan3105@gmail.com', label: 'Email' },
-          ].map(({ icon: Icon, href, label }) => (
-            <a
-              key={label}
-              href={href}
-              target={label !== 'Email' ? '_blank' : undefined}
-              rel="noopener noreferrer"
-              className="group relative p-3 rounded-xl border border-white/10 text-muted hover:text-white hover:border-primary/40 hover:bg-primary/5 transition-all duration-300 hover:-translate-y-1"
-            >
-              <Icon size={20} />
-              <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 text-xs text-muted opacity-0 group-hover:opacity-100 transition-opacity">
-                {label}
-              </span>
-            </a>
-          ))}
-        </div>
-
         {/* Stats */}
-        <div className="grid grid-cols-3 gap-6 max-w-lg mx-auto animate-fade-in-up opacity-0 delay-600" style={{ animationFillMode: 'forwards' }}>
+        <div className="grid grid-cols-3 gap-6 max-w-lg mx-auto lg:mx-0 mt-16 animate-fade-in-up opacity-0 delay-700" style={{ animationFillMode: 'forwards' }}>
           {[
             { value: 303, suffix: '+', label: 'LeetCode Problems' },
             { value: 4, suffix: '+', label: 'Projects Shipped' },
             { value: 50, suffix: '%', label: 'ML Improvements' },
           ].map(({ value, suffix, label }) => (
-            <div key={label} className="text-center">
+            <div key={label} className="text-center lg:text-left">
               <p className="text-2xl md:text-3xl font-bold gradient-text">
                 <AnimatedCounter target={value} suffix={suffix} />
               </p>
