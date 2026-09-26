@@ -95,7 +95,7 @@ const skills = [
 ];
 const social = [
   ["GitHub", "https://github.com/RaghunandhanG"],
-  ["LinkedIn", "https://linkedin.com/in/raghunandhan-g"],
+  ["LinkedIn", "https://www.linkedin.com/in/raghunandhang/"],
   ["LeetCode", "https://leetcode.com/u/Raghunandhan_G/"],
 ];
 function Tags({ items }) {
