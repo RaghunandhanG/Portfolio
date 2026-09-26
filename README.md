@@ -1,16 +1,34 @@
-# React + Vite
+# Raghunandhan G — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive React portfolio with a dark technical visual palette with mint accents and a terminal-inspired introduction. Includes selected projects with category filters and expandable details, experience, skills, recognition, résumé downloads, and direct contact links.
 
-Currently, two official plugins are available:
+## Local development
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Requires Node.js 22.12+ (or a compatible newer version) and npm.
 
-## React Compiler
+```sh
+npm ci
+npm run dev
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Validate and build
 
-## Expanding the ESLint configuration
+```sh
+npm run lint
+npm run build
+npm run preview
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Deploy the generated `dist/` directory to a static host. Vite uses relative asset paths so the build can also be served from a subdirectory such as GitHub Pages. Deployment is not configured or published by this change.
+
+## Update content
+
+- `src/App.jsx`: project data, experience, skills, awards, and contact links.
+- `src/index.css`: design tokens, layout, project illustrations, and responsive styles.
+- The main portfolio is photo-free; `public/profile.png` is retained only for earlier design previews.
+- `Raghunandhan_G_AI_Engineer.pdf`: downloadable résumé, bundled by Vite.
+- `index.html`: page title and social/search metadata.
+
+Project illustrations are decorative CSS visuals, not product screenshots. Project statistics and experience dates are retained from the original portfolio; review them before publishing. Google Fonts is optional: local system fonts are used if it cannot load. Contact opens the visitor’s email or phone application; there is no backend contact form.
+
+Accessibility includes a skip link, keyboard focus styles, labeled menu and detail buttons, native disclosure controls, and reduced-motion support.
